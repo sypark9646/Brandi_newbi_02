@@ -1,30 +1,5 @@
-# brandi-newbi02
-
-> A Vue.js project
-
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+1. Vue styleBind 활용하기 (복합)
+2. Vue를 이용해서 브랜디 API를 연동해보기 1
+3. Vue를 이용해서 브랜디 API를 연동해보기 2 (복합)
+4. Vue v-if 활용하기 (복합)
+5. Vue - slot 활용하기
