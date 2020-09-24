@@ -16,8 +16,6 @@ export default new Router({
       component: Exhibition,
       children: [
         {
-          //번외 과제 
-          alias: '',
           path: 'ing',
           name: 'ing',
           component: Ing
