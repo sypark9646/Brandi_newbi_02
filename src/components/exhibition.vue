@@ -2,13 +2,13 @@
   <div class="exhibition">
     <div class="menu">
       <div
-        :class="[{ ingMenu: isActiveIng }, {notIng: !isActiveIng}]"
+        :class="[{ ingMenu: isActiveIng }, { notIng: !isActiveIng }]"
         @click="routerPush('ing')"
       >
         <p>진행중</p>
       </div>
       <div
-        :class="[{ endMenu: !isActiveIng }, {notEnd: isActiveIng}]"
+        :class="[{ endMenu: !isActiveIng }, { notEnd: isActiveIng }]"
         @click="routerPush('end')"
       >
         <p>종료</p>
