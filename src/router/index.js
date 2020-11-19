@@ -1,31 +1,35 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Exhibition from '../components/exhibition'
-import Ing from '../components/ing'
-import End from '../components/end'
+import Vue from "vue";
+import Router from "vue-router";
+import Exhibition from "../components/exhibition";
+import Ing from "../components/ing";
+import End from "../components/end";
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
-  mode: 'history',
+  mode: "history",
   routes: [
-    
     {
-      path: '/',
-      name: 'exhibition',
+      path: "/",
+      name: "exhibition",
       component: Exhibition,
       children: [
         {
-          path: 'ing',
-          name: 'ing',
-          component: Ing
+          path: "",
+          name: "ing",
+          component: Ing,
         },
         {
-          path: 'end',
-          name: 'end',
-          component: End
-        }
-      ]
-    }
-  ]
-})
+          path: "ing",
+          name: "ing",
+          component: Ing,
+        },
+        {
+          path: "end",
+          name: "end",
+          component: End,
+        },
+      ],
+    },
+  ],
+});

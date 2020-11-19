@@ -1,14 +1,16 @@
 <template>
   <div class="exhibition">
     <div class="menu">
-
-      <!-- Vue styleBind 활용하기 (복합) -->
-      <!-- vue 스타일 바인딩 개념을 이용하여 화면 진행중 탭을 누르면 진행중 탭 글자와 밑선이 빨갛게 스타일링을 해주고, 종료 탭은 글자와 밑선이 검게 스타일링 해줍니다. -->
-      
-      <div>
+      <div
+        :class="[{ ingMenu: isActiveIng }, {notIng: !isActiveIng}]"
+        @click="routerPush('ing')"
+      >
         <p>진행중</p>
       </div>
-      <div>
+      <div
+        :class="[{ endMenu: !isActiveIng }, {notEnd: isActiveIng}]"
+        @click="routerPush('end')"
+      >
         <p>종료</p>
       </div>
     </div>
@@ -17,21 +19,30 @@
 </template>
 
 <script>
+import router from "../router/index.js";
+
 export default {
   name: "exhibition",
   data() {
     return {
-
+      isActiveIng: true,
     };
   },
+  beforeMount() {
+    router.push({ name: "ing" });
+  },
   methods: {
-    routerPush(path){
+    routerPush(path) {
+      // router를 이용하여 로컬호스트를 띄우면 바로 ing.vue 컴포넌트의 내용이 나오게 해줍니다.
+      router.push({ name: path });
 
-    // Vue styleBind 활용하기 (복합)
-    // router를 이용하여 로컬호스트를 띄우면 바로 ing.vue 컴포넌트의 내용이 나오게 해줍니다.
-    
-    }
-  }
+      if (path === "ing") {
+        this.isActiveIng = true;
+      } else if (path === "end") {
+        this.isActiveIng = false;
+      }
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>
@@ -61,10 +72,11 @@ export default {
     border-color: #ff204b;
 
     p {
-      margin: unset
+      margin: unset;
     }
   }
-  .notIng, .notEnd {
+  .notIng,
+  .notEnd {
     width: 50%;
     text-align: center;
 
@@ -75,9 +87,8 @@ export default {
     border-color: lightgray;
 
     p {
-      margin: unset
+      margin: unset;
     }
   }
 }
 </style>
-
