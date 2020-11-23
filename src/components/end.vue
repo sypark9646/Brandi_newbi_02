@@ -10,17 +10,17 @@
             backgroundSize: 'cover',
           }"
         />
-        <EndSlot>
-          <div slot:endHeader class="text-align">
+        <end-slot>
+          <div slot="endHeader" class="text-align">
             안녕하십니까 고객님
           </div>
-          <div slot:endSection class="text-align">
+          <div slot="endSection" class="text-align">
             {{ banner.id }} 기획전은 이미 종료되었습니다.
           </div>
-          <div slot:endFooter>
+          <div slot="endFooter" class="text-align">
             찾아주셔서 감사합니다.
           </div>
-        </EndSlot>
+        </end-slot>
       </div>
     </div>
   </div>
@@ -31,15 +31,21 @@ import EndSlot from "./endSlot.vue";
 
 const axios = require("axios");
 const url = "{{url}}";
-const token = "{{token}}";
+const token =
+  "{{token}}";
 
 export default {
+  name: 'end',
+  components:{
+    "end-slot": EndSlot,
+  },
   mounted() {
     this.getBrandiEndData();
   },
   data() {
     return {
       banners: null,
+      isSelectedEndMenu: true,
     };
   },
   methods: {
@@ -57,7 +63,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .end {
   width: 100%;
   .bannerBox {

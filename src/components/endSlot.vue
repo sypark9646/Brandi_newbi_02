@@ -8,9 +8,11 @@
 
 <script>
 export default {
+  name: 'end-slot',
   data() {
     return {
       finishedId: null,
+      height: 0,
     };
   },
 };
